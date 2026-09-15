@@ -17,6 +17,8 @@ const SPARKLES = [
 export function Cover({ t }: { t: Dict }) {
   const { groom, bride } = wedding.couple;
   const [year, month, day] = wedding.date.slice(0, 10).split("-");
+  // Great Vibes averages ~0.43em per letter; shrink long names so they stay on the polaroid.
+  const namesSize = Math.min(10, 140 / (groom.length + bride.length + 1));
 
   return (
     <header className={styles.cover}>
@@ -42,7 +44,7 @@ export function Cover({ t }: { t: Dict }) {
             className={styles.img}
           />
         </div>
-        <figcaption className={styles.names}>
+        <figcaption className={styles.names} style={{ fontSize: `${namesSize}cqi` }}>
           {groom}
           <span className={styles.amp}>&amp;</span>
           {bride}

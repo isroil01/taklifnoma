@@ -9,13 +9,14 @@ import { DateSection } from "./DateSection";
 import { DressCode } from "./DressCode";
 import { Greeting } from "./Greeting";
 import { LangSwitch } from "./LangSwitch";
+import { MusicPlayer } from "./MusicPlayer";
 import { PhotoBooth } from "./PhotoBooth";
 import { Program } from "./Program";
 import { Rsvp } from "./Rsvp";
 import { Venue } from "./Venue";
 import styles from "./Invitation.module.css";
 
-export function Invitation() {
+export function Invitation({ hasMusic }: { hasMusic: boolean }) {
   const lang = useLang();
   const t = ui[lang];
 
@@ -26,6 +27,7 @@ export function Invitation() {
   return (
     <>
       <LangSwitch lang={lang} />
+      {hasMusic && <MusicPlayer t={t} />}
       <main className={styles.shell}>
         <Cover t={t} />
         <PhotoBooth t={t} />

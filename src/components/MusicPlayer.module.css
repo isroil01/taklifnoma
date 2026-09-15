@@ -1,0 +1,106 @@
+.button {
+  position: fixed;
+  z-index: 50;
+  right: max(16px, calc((100vw - var(--shell)) / 2 + 16px));
+  bottom: calc(env(safe-area-inset-bottom) + 16px);
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 1px solid rgba(244, 226, 196, 0.5);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #8d2034, var(--wine-800) 60%, var(--wine-900));
+  box-shadow: 0 6px 18px rgba(40, 0, 8, 0.4);
+  color: var(--ivory);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--wine-500);
+  outline-offset: 3px;
+}
+
+/* Soft pulsing ring while the music is off, so guests notice there is a song. */
+.button:not(.playing)::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid rgba(163, 48, 63, 0.7);
+  border-radius: 50%;
+  animation: pulse 2.2s ease-out infinite;
+  pointer-events: none;
+}
+
+.disc {
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(244, 226, 196, 0.45);
+  border-radius: 50%;
+}
+
+.playing .disc {
+  animation: spin 6s linear infinite;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+}
+
+.bars span {
+  width: 3px;
+  height: 100%;
+  border-radius: 2px;
+  background: currentColor;
+  transform-origin: bottom;
+  animation: equalizer 1s ease-in-out infinite;
+}
+
+.bars span:nth-child(2) {
+  animation-delay: -0.4s;
+}
+
+.bars span:nth-child(3) {
+  animation-delay: -0.7s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
+@keyframes equalizer {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}

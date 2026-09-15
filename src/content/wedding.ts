@@ -33,6 +33,9 @@ export const wedding = {
     "/photos/cover.svg",
   ],
 
+  /** Background song. Put the file at public/music/wedding.mp3 (or change the path); the music button appears once it exists. */
+  music: { src: "/music/wedding.mp3", volume: 0.6 },
+
   venue: {
     name: { ru: "Тойхона «Fayz»", uz: "Fayz to’yhonasi" },
     /** Leave empty to hide the address line. */
@@ -57,11 +60,11 @@ export const wedding = {
       note: { ru: "Первый танец молодожёнов", uz: "Yoshlarning birinchi raqsi" },
     },
     {
-      time: "21:30",
+      time: "19:00",
       title: { ru: "Свадебный торт", uz: "To‘y torti" },
     },
     {
-      time: "23:00",
+      time: "20:00",
       title: { ru: "Завершение вечера", uz: "Kechaning yakuni" },
     },
   ] as { time: string; title: Localized; note?: Localized }[],
@@ -132,6 +135,9 @@ const ru = {
 
   closingTitle: "С нетерпением ждём вас!",
 
+  musicOn: "Включить музыку",
+  musicOff: "Выключить музыку",
+
   close: "Закрыть",
   prev: "Предыдущее фото",
   next: "Следующее фото",
@@ -195,6 +201,9 @@ const uz: Dict = {
   error: "Yuborib bo‘lmadi. Qaytadan urinib ko‘ring.",
 
   closingTitle: "Sizni intizorlik bilan kutamiz!",
+
+  musicOn: "Musiqani yoqish",
+  musicOff: "Musiqani o‘chirish",
 
   close: "Yopish",
   prev: "Oldingi rasm",
