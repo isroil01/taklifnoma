@@ -1,0 +1,136 @@
+.dateSection {
+  background: var(--cream);
+}
+
+.dateRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-top: 8cqi;
+  color: var(--wine-700);
+}
+
+.side {
+  padding: 2.2cqi 0;
+  border-block: 1px solid var(--line);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 3.7cqi;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.day {
+  padding: 0 5cqi;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 21cqi;
+  line-height: 1;
+}
+
+.time {
+  margin: 5cqi 0 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 5cqi;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-ink);
+}
+
+.calendar {
+  max-width: 78cqi;
+  margin: 10cqi auto 0;
+}
+
+.monthTitle {
+  margin-bottom: 3cqi;
+  font-size: 11cqi;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 1cqi;
+  font-size: 4.4cqi;
+}
+
+.weekday {
+  margin-bottom: 1.5cqi;
+  padding-bottom: 2cqi;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 3.1cqi;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.cellNumber {
+  position: relative;
+}
+
+.marked {
+  font-weight: 600;
+  color: var(--ivory);
+}
+
+.heart {
+  position: absolute;
+  inset: -12%;
+  width: 124%;
+  height: 124%;
+  color: var(--wine-700);
+  filter: drop-shadow(0 1cqi 1.2cqi rgba(110, 20, 38, 0.35));
+  animation: beat 1.8s ease-in-out infinite;
+}
+
+.countdownTitle {
+  margin-top: 12cqi;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5cqi;
+  margin-top: 5cqi;
+}
+
+.unit {
+  padding: 4.5cqi 0 3cqi;
+  border: 1px solid var(--line);
+  border-radius: 40cqi 40cqi 2cqi 2cqi;
+  background: linear-gradient(#fffdf9, #f6ede3);
+}
+
+.number {
+  display: block;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 8cqi;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--wine-700);
+}
+
+.label {
+  font-size: 3.4cqi;
+  color: var(--muted);
+}
+
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+}

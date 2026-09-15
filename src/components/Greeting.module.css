@@ -1,0 +1,13 @@
+.greeting {
+  padding-top: 6cqi;
+  background: linear-gradient(var(--paper), var(--cream));
+}
+
+.title {
+  margin: 3cqi 0 6cqi;
+}
+
+.italic {
+  font-style: italic;
+  color: var(--rose-ink);
+}

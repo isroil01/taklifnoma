@@ -1,0 +1,21 @@
+.shell {
+  position: relative;
+  width: 100%;
+  max-width: var(--shell);
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: var(--paper);
+  /* Every size inside is expressed in cqi, so the card scales with the column, not the window. */
+  container-type: inline-size;
+  overflow: clip;
+}
+
+@media (min-width: 560px) {
+  .shell {
+    min-height: auto;
+    border-radius: 28px;
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
+}

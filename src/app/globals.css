@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light;
+
+  --wine-900: #3d0711;
+  --wine-800: #560b19;
+  --wine-700: #6e1426;
+  --wine-500: #a3303f;
+  --rose-ink: #8c5b62;
+  --ink: #3a1f24;
+  --muted: #8a6d71;
+  --paper: #fffdf9;
+  --cream: #f8f2ea;
+  --ivory: #fbf5ee;
+  --line: rgba(110, 20, 38, 0.28);
+
+  --shell: 440px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  color: var(--ink);
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  /* Blurred wine-and-rose backdrop, only visible around the column on wide screens. */
+  background:
+    radial-gradient(40% 35% at 15% 20%, rgba(190, 40, 70, 0.55), transparent 70%),
+    radial-gradient(35% 30% at 85% 30%, rgba(230, 120, 140, 0.35), transparent 70%),
+    radial-gradient(45% 40% at 70% 85%, rgba(150, 20, 45, 0.5), transparent 70%),
+    radial-gradient(30% 25% at 20% 80%, rgba(240, 170, 180, 0.25), transparent 70%),
+    #16040a;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+@media (min-width: 560px) {
+  body {
+    padding-block: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

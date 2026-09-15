@@ -1,0 +1,123 @@
+.cover {
+  position: relative;
+  z-index: 3;
+  padding: 18cqi 8cqi 16cqi;
+  text-align: center;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255, 170, 185, 0.14), transparent 60%),
+    radial-gradient(70% 40% at 50% 45%, rgba(20, 0, 4, 0.35), transparent 70%),
+    url("/lace/lace-tile.svg") center top / 36cqi auto repeat,
+    var(--wine-800);
+}
+
+.eyebrow {
+  position: relative;
+  color: rgba(251, 236, 238, 0.85);
+}
+
+.polaroid {
+  position: relative;
+  width: 68cqi;
+  margin: 8cqi auto 0;
+  padding: 3.6cqi 3.6cqi 15cqi;
+  background: linear-gradient(#fdfaf4, #f1e9dc);
+  box-shadow:
+    0 1.5cqi 1cqi rgba(0, 0, 0, 0.22),
+    0 8cqi 14cqi rgba(15, 0, 3, 0.55);
+  transform: rotate(-4deg);
+  animation: drop 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 4.4;
+  overflow: hidden;
+  border-radius: 50% 50% 3px 3px / 30% 30% 3px 3px;
+  background: #d8cfc0;
+}
+
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+    inset 0 -6cqi 10cqi rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.names {
+  position: absolute;
+  inset: auto 0 2.6cqi;
+  font-family: var(--font-script), "Segoe Script", cursive;
+  font-size: 10cqi;
+  line-height: 1;
+  white-space: nowrap;
+  color: #6a2a33;
+}
+
+.amp {
+  margin: 0 0.18em;
+  font-size: 0.7em;
+  color: var(--wine-500);
+}
+
+.date {
+  position: relative;
+  margin: 10cqi 0 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 4.4cqi;
+  letter-spacing: 0.35em;
+  color: #f3e1e4;
+}
+
+/* Scalloped lace edge hanging over the next section. */
+.fringe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -13.5cqi;
+  height: 14cqi;
+  background: url("/lace/lace-fringe.svg") center top / 16cqi 14cqi repeat-x;
+  filter: drop-shadow(0 3px 3px rgba(40, 0, 8, 0.25));
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: 2.2cqi;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, #fff 0 18%, rgba(255, 220, 230, 0.6) 30%, transparent 70%);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  opacity: 0;
+  animation: twinkle 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-6cqi) rotate(-12deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(calc(var(--scale, 1) * 1.6));
+  }
+}

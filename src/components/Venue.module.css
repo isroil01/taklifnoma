@@ -1,0 +1,67 @@
+.venue {
+  background: var(--cream);
+}
+
+.card {
+  position: relative;
+  margin-top: 8cqi;
+  padding: 13cqi 7cqi 9cqi;
+  border: 1px solid var(--line);
+  border-radius: 50cqi 50cqi 3cqi 3cqi;
+  background: radial-gradient(circle at 50% 0, #fff, #fbf6ef 70%);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 1.8cqi;
+  border: 1px solid rgba(110, 20, 38, 0.14);
+  border-radius: 48cqi 48cqi 2cqi 2cqi;
+  pointer-events: none;
+}
+
+.pin {
+  width: 10cqi;
+  color: var(--wine-700);
+}
+
+.name {
+  margin: 2cqi 0 3cqi;
+  font-size: 10.5cqi;
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5cqi;
+  margin-top: 7cqi;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 2.5cqi 5cqi;
+  border: 1px solid var(--wine-700);
+  border-radius: 999px;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: max(12px, 3.3cqi);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--wine-700);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.button:hover,
+.solid {
+  background: var(--wine-700);
+  color: var(--ivory);
+}
+
+.solid:hover {
+  background: var(--wine-800);
+}

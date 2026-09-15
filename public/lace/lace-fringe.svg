@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="70" viewBox="0 0 80 70">
+  <defs>
+    <pattern id="net" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0 4L4 0L8 4L4 8Z" fill="none" stroke="#7a1528" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+  <path d="M0 0H80V20C80 42 62 54 40 54C18 54 0 42 0 20Z" fill="#560b19"/>
+  <path d="M0 0H80V20C80 42 62 54 40 54C18 54 0 42 0 20Z" fill="url(#net)"/>
+
+  <g transform="translate(40 22)" fill="#801a2c" stroke="#c75a6e" stroke-width="0.9">
+    <ellipse cy="-7" rx="4.5" ry="7"/>
+    <ellipse cy="-7" rx="4.5" ry="7" transform="rotate(72)"/>
+    <ellipse cy="-7" rx="4.5" ry="7" transform="rotate(144)"/>
+    <ellipse cy="-7" rx="4.5" ry="7" transform="rotate(216)"/>
+    <ellipse cy="-7" rx="4.5" ry="7" transform="rotate(288)"/>
+    <circle r="2.6" fill="#d27085" stroke="none"/>
+  </g>
+
+  <path d="M6 22C8 40 22 47 40 47C58 47 72 40 74 22" fill="none" stroke="#c75a6e" stroke-width="1.2" stroke-dasharray="0.1 3.4" stroke-linecap="round"/>
+  <g fill="#3d0711" stroke="#c75a6e" stroke-width="0.8">
+    <circle cx="15" cy="37" r="2.4"/>
+    <circle cx="27" cy="43.5" r="2.4"/>
+    <circle cx="53" cy="43.5" r="2.4"/>
+    <circle cx="65" cy="37" r="2.4"/>
+  </g>
+
+  <g fill="#560b19">
+    <circle cx="3" cy="34" r="2"/>
+    <circle cx="11" cy="45" r="2"/>
+    <circle cx="24" cy="52" r="2"/>
+    <circle cx="40" cy="55" r="2"/>
+    <circle cx="56" cy="52" r="2"/>
+    <circle cx="69" cy="45" r="2"/>
+    <circle cx="77" cy="34" r="2"/>
+  </g>
+
+  <path d="M40 55V64" stroke="#560b19" stroke-width="1.4"/>
+  <circle cx="40" cy="66" r="3" fill="#6e1426" stroke="#c75a6e" stroke-width="0.6"/>
+</svg>

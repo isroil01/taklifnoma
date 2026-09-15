@@ -1,0 +1,41 @@
+.closing {
+  position: relative;
+  margin-top: 14cqi;
+  padding: 22cqi 8cqi calc(18cqi + env(safe-area-inset-bottom));
+  text-align: center;
+  background:
+    radial-gradient(90% 60% at 50% 50%, rgba(20, 0, 4, 0.45), transparent 75%),
+    url("/lace/lace-tile.svg") center top / 36cqi auto repeat,
+    var(--wine-800);
+}
+
+.fringe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -13.5cqi;
+  height: 14cqi;
+  background: url("/lace/lace-fringe.svg") center top / 16cqi 14cqi repeat-x;
+  transform: scaleY(-1);
+  filter: drop-shadow(0 3px 3px rgba(40, 0, 8, 0.25));
+  pointer-events: none;
+}
+
+.title {
+  font-size: 14cqi;
+  color: #fbeef0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.names {
+  margin-top: 8cqi;
+  color: rgba(251, 236, 238, 0.85);
+}
+
+.date {
+  margin: 3cqi 0 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 4cqi;
+  letter-spacing: 0.35em;
+  color: rgba(251, 236, 238, 0.7);
+}

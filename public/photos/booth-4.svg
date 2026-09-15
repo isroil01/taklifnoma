@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#d3ccc1"/><stop offset="1" stop-color="#857d73"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </radialGradient>
+    <filter id="b"><feGaussianBlur stdDeviation="28"/></filter>
+    <filter id="s"><feGaussianBlur stdDeviation="1.2"/></filter>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <g filter="url(#b)" fill="#ffffff">
+    <circle cx="110" cy="160" r="90" opacity="0.55"/><circle cx="500" cy="120" r="70" opacity="0.4"/>
+    <circle cx="470" cy="420" r="110" opacity="0.3"/><circle cx="80" cy="520" r="80" opacity="0.35"/>
+  </g>
+  <g filter="url(#s)" transform="rotate(2 300 500)">
+    <path d="M255 470Q350 395 445 470L480 820H225Z" fill="#231f1e"/>
+    <path d="M334 430L350 500L366 430Z" fill="#f3efe8"/>
+    <circle cx="350" cy="345" r="50" fill="#b9aca1"/>
+    <path d="M300 335Q350 270 400 335Q390 300 350 296Q310 300 300 335Z" fill="#1d1614"/>
+    <path d="M205 330Q250 270 300 320L370 820H60Z" fill="#ffffff" opacity="0.55"/>
+    <path d="M170 480Q250 420 320 480L380 820H100Z" fill="#f2eee8"/>
+    <circle cx="250" cy="360" r="45" fill="#b9aca1"/>
+    <path d="M203 360Q210 300 250 305Q294 305 296 350Q270 320 203 360Z" fill="#3a2a22"/>
+  </g>
+  <rect width="600" height="800" fill="url(#vig)"/>
+</svg>

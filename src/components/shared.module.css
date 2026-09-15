@@ -1,0 +1,52 @@
+.section {
+  position: relative;
+  padding: 16cqi 8cqi;
+  text-align: center;
+  background: var(--paper);
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 3.1cqi;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.caps {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 7.6cqi;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: pre-line;
+  color: var(--rose-ink);
+}
+
+.script {
+  margin: 0;
+  font-family: var(--font-script), "Segoe Script", cursive;
+  font-size: 15cqi;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--wine-700);
+}
+
+.text {
+  max-width: 34ch;
+  margin: 0 auto;
+  font-size: clamp(16px, 4.5cqi, 19px);
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.divider {
+  display: block;
+  width: 46cqi;
+  margin: 7cqi auto;
+  color: var(--wine-500);
+}

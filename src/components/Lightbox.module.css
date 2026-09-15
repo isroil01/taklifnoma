@@ -1,0 +1,119 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: calc(env(safe-area-inset-top) + 64px) 16px calc(env(safe-area-inset-bottom) + 80px);
+  background: rgba(20, 3, 7, 0.92);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: fade 0.3s ease both;
+}
+
+.figure {
+  width: min(90vw, 540px);
+  margin: 0;
+  animation: zoom 0.35s ease both;
+}
+
+.frame {
+  position: relative;
+  width: min(100%, calc(68dvh * 0.75));
+  aspect-ratio: 3 / 4;
+  margin: 0 auto;
+  border: 8px solid #fbf8f2;
+  background: #2a1418;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.img {
+  object-fit: cover;
+}
+
+.counter {
+  margin-top: 14px;
+  text-align: center;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: #f1dfe2;
+}
+
+.button {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.button:focus-visible {
+  outline: 2px solid #f1dfe2;
+  outline-offset: 2px;
+}
+
+.close {
+  top: calc(env(safe-area-inset-top) + 12px);
+  right: 12px;
+}
+
+.nav {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 12px;
+}
+
+.next {
+  right: 12px;
+}
+
+/* On phones the arrows move under the photo, next to the swipe area. */
+@media (max-width: 640px) {
+  .nav {
+    top: auto;
+    bottom: calc(env(safe-area-inset-bottom) + 20px);
+    transform: none;
+  }
+
+  .prev {
+    left: calc(50% - 64px);
+  }
+
+  .next {
+    right: calc(50% - 64px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}

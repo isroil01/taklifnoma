@@ -1,0 +1,136 @@
+.booth {
+  /* Extra room for the lace fringe hanging from the cover. */
+  padding-top: 28cqi;
+}
+
+.plaque {
+  position: relative;
+  display: block;
+  width: 58cqi;
+  aspect-ratio: 200 / 340;
+  margin: 9cqi auto 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transform-origin: 50% 0;
+  filter: drop-shadow(0 3cqi 4cqi rgba(60, 5, 15, 0.35));
+  animation: sway 5s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.plaque:focus-visible {
+  outline: 2px solid var(--wine-500);
+  outline-offset: 6px;
+}
+
+.plaqueArt {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.strip {
+  position: absolute;
+  top: 12.5%;
+  bottom: 11%;
+  left: 50%;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2cqi;
+  width: 42%;
+  padding: 3cqi 2.6cqi;
+  background: #fbf8f2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  transform: translateX(-50%);
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  background: #cfc7ba;
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.plaque:hover .img {
+  transform: scale(1.06);
+}
+
+.rail,
+.pin {
+  position: absolute;
+  pointer-events: none;
+}
+
+.rail {
+  top: 9.2%;
+  left: 24%;
+  right: 24%;
+  height: 2.2%;
+  border-radius: 999px;
+  background: linear-gradient(#f6e3a8, #c9a45c 45%, #8d6a2c);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.rail::before,
+.rail::after,
+.pin {
+  width: 4.4cqi;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff3c4, #d4ad5f 45%, #7f5c22 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.rail::before,
+.rail::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rail::before {
+  left: 0;
+}
+
+.rail::after {
+  left: 100%;
+}
+
+.pin {
+  bottom: 4.6%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hint {
+  margin-top: 8cqi;
+  font-size: 11cqi;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-1.2deg);
+  }
+  50% {
+    transform: rotate(1.2deg);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
