@@ -22,14 +22,17 @@ const serif = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
 });
 
+// Link previews (Telegram, WhatsApp) need absolute image URLs, so the site's public address must be known.
+const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? (vercelUrl ? `https://${vercelUrl}` : "http://localhost:3000");
+
 const { groom, bride } = wedding.couple;
-const title = `${groom} & ${bride} — приглашение на свадьбу`;
-const description = "Мы приглашаем вас разделить с нами самый счастливый день нашей жизни.";
 
 export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: { title, description, type: "website" },
+  metadataBase: new URL(siteUrl),
+  title: `${groom} & ${bride}`,
+  description: "Мы приглашаем вас разделить с нами самый счастливый день нашей жизни.",
 };
 
 export const viewport: Viewport = {

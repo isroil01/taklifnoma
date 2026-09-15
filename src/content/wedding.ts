@@ -1,6 +1,6 @@
 /**
  * Everything a couple changes lives in this file: names, date, venue,
- * photos, program, dress-code palette and all visible texts (RU + UZ).
+ * photos, music, program and all visible texts (RU + UZ).
  */
 
 export type Lang = "ru" | "uz";
@@ -14,27 +14,23 @@ export const wedding = {
 
   defaultLang: "ru" as Lang,
 
-  /** Replace these with real photos in /public/photos (jpg/webp work too). */
-  photos: {
-    cover: "/photos/cover.svg",
-    booth: [
-      "/photos/booth-1.svg",
-      "/photos/booth-2.svg",
-      "/photos/booth-3.svg",
-      "/photos/booth-4.svg",
-    ],
-  },
-  /** Photos shown when a guest taps the photo booth. */
-  gallery: [
-    "/photos/booth-1.svg",
-    "/photos/booth-2.svg",
-    "/photos/booth-3.svg",
-    "/photos/booth-4.svg",
-    "/photos/cover.svg",
-  ],
+  /** Cover photo in /public/photos. Use JPG or PNG: the Telegram preview image reuses it. */
+  photos: { cover: "/photos/cover.jpg" },
 
   /** Background song. Put the file at public/music/wedding.mp3 (or change the path); the music button appears once it exists. */
-  music: { src: "/music/wedding.mp3", volume: 0.6 },
+  music: {
+    src: "/music/wedding.mp3",
+    volume: 0.6,
+    /** The recording's licence (CC BY-SA 3.0) requires this credit; it is shown in the footer. */
+    credit: {
+      title: "Pachelbel’s Canon",
+      source: "https://commons.wikimedia.org/wiki/File:Pachelbel's_Canon.ogg",
+      author: "Lee Galloway",
+      authorUrl: "http://www.LeeGalloway.com/",
+      license: "CC BY-SA 3.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    } as { title: string; source: string; author: string; authorUrl: string; license: string; licenseUrl: string } | null,
+  },
 
   venue: {
     name: { ru: "Тойхона «Fayz»", uz: "Fayz to’yhonasi" },
@@ -68,21 +64,15 @@ export const wedding = {
       title: { ru: "Завершение вечера", uz: "Kechaning yakuni" },
     },
   ] as { time: string; title: Localized; note?: Localized }[],
-
-  palette: [
-    { color: "#560b19", name: { ru: "Бордо", uz: "Bordo" } },
-    { color: "#9c3a4a", name: { ru: "Гранат", uz: "Anor" } },
-    { color: "#d9c3a5", name: { ru: "Шампань", uz: "Shampan" } },
-    { color: "#f4ede1", name: { ru: "Айвори", uz: "Fil suyagi" } },
-    { color: "#2b2323", name: { ru: "Графит", uz: "Grafit" } },
-  ] as { color: string; name: Localized }[],
 };
 
 const ru = {
+  introEyebrow: "Приглашение на свадьбу",
+  introTap: "Нажмите на печать, чтобы открыть",
+  openInvitation: "Открыть приглашение",
+  personalEyebrow: "Персональное приглашение",
+
   coverEyebrow: "Приглашение на свадьбу",
-  boothTitle: "Вы приглашены\nна свадьбу!",
-  boothHint: "Нажмите на фото будку",
-  galleryLabel: "Открыть галерею фотографий",
 
   greetingEyebrow: "С любовью",
   greetingTitle: "Дорогие гости",
@@ -110,10 +100,6 @@ const ru = {
   openYandex: "Яндекс Карты",
   openGoogle: "Google Maps",
 
-  dressTitle: "Дресс код",
-  dressText:
-    "Будем признательны, если вы поддержите атмосферу нашего вечера. Мы будем счастливы видеть вас в нарядных образах в оттенках нашей палитры.",
-
   rsvpTitle: "Подтвердите присутствие",
   rsvpText: "Пожалуйста, дайте нам знать до 18 сентября, сможете ли вы прийти.",
   nameLabel: "Ваше имя и фамилия",
@@ -138,18 +124,31 @@ const ru = {
   musicOn: "Включить музыку",
   musicOff: "Выключить музыку",
 
-  close: "Закрыть",
-  prev: "Предыдущее фото",
-  next: "Следующее фото",
+  ogTitle: "приглашение на свадьбу",
+  ogPersonalTitle: "{guest}, приглашаем вас на нашу свадьбу",
+
+  linksTitle: "Персональные ссылки",
+  linksText: "Впишите имя гостя — в приглашении по этой ссылке он увидит своё имя.",
+  guestLabel: "Имя гостя",
+  guestPlaceholder: "Например, Азиз ака с семьёй",
+  linkLang: "Язык приглашения",
+  linkEmpty: "Ссылка появится здесь",
+  copy: "Скопировать",
+  copied: "Скопировано",
+  sendTelegram: "Отправить в Telegram",
+  openLink: "Открыть",
+  shareText: "Приглашаем вас на нашу свадьбу!",
 };
 
 export type Dict = typeof ru;
 
 const uz: Dict = {
+  introEyebrow: "Nikoh to‘yiga taklifnoma",
+  introTap: "Ochish uchun muhrni bosing",
+  openInvitation: "Taklifnomani ochish",
+  personalEyebrow: "Hurmatli",
+
   coverEyebrow: "Nikoh to‘yiga taklifnoma",
-  boothTitle: "Siz to‘yimizga\ntaklif etilgansiz!",
-  boothHint: "Fotobudkani bosing",
-  galleryLabel: "Fotogalereyani ochish",
 
   greetingEyebrow: "Mehr bilan",
   greetingTitle: "Aziz mehmonlar",
@@ -177,10 +176,6 @@ const uz: Dict = {
   openYandex: "Yandex Xaritalar",
   openGoogle: "Google Maps",
 
-  dressTitle: "Dress-kod",
-  dressText:
-    "Kechamiz ruhini qo‘llab-quvvatlasangiz, biz uchun katta quvonch bo‘ladi. Sizni ranglar palitramizga mos bayramona liboslarda ko‘rishni istaymiz.",
-
   rsvpTitle: "Ishtirokingizni tasdiqlang",
   rsvpText: "Iltimos, 18-sentabrgacha kela olishingizni bizga ma’lum qiling.",
   nameLabel: "Ism va familiyangiz",
@@ -205,9 +200,34 @@ const uz: Dict = {
   musicOn: "Musiqani yoqish",
   musicOff: "Musiqani o‘chirish",
 
-  close: "Yopish",
-  prev: "Oldingi rasm",
-  next: "Keyingi rasm",
+  ogTitle: "nikoh to‘yiga taklifnoma",
+  ogPersonalTitle: "Hurmatli {guest}, sizni to‘yimizga taklif qilamiz",
+
+  linksTitle: "Shaxsiy havolalar",
+  linksText: "Mehmon ismini yozing — shu havola orqali ochilgan taklifnomada uning ismi ko‘rinadi.",
+  guestLabel: "Mehmon ismi",
+  guestPlaceholder: "Masalan, Aziz aka oilasi bilan",
+  linkLang: "Taklifnoma tili",
+  linkEmpty: "Havola shu yerda paydo bo‘ladi",
+  copy: "Nusxalash",
+  copied: "Nusxalandi",
+  sendTelegram: "Telegram orqali yuborish",
+  openLink: "Ochish",
+  shareText: "Sizni to‘yimizga taklif qilamiz!",
 };
 
 export const ui: Record<Lang, Dict> = { ru, uz };
+
+const RU_MONTHS_GENITIVE = [
+  "января", "февраля", "марта", "апреля", "мая", "июня",
+  "июля", "августа", "сентября", "октября", "ноября", "декабря",
+];
+
+/** "21 сентября 2026, 17:00" / "2026-yil 21-sentabr, soat 17:00" */
+export function longDate(lang: Lang) {
+  const [year, month, day] = wedding.date.slice(0, 10).split("-").map(Number);
+  const time = wedding.date.slice(11, 16);
+  return lang === "ru"
+    ? `${day} ${RU_MONTHS_GENITIVE[month - 1]} ${year}, ${time}`
+    : `${year}-yil ${day}-${ui.uz.months[month - 1].toLowerCase()}, soat ${time}`;
+}

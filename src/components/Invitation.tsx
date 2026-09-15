@@ -1,23 +1,28 @@
 "use client";
 
 import { useEffect } from "react";
-import { ui } from "@/content/wedding";
+import { ui, type Lang } from "@/content/wedding";
 import { useLang } from "@/lib/lang";
 import { Closing } from "./Closing";
 import { Cover } from "./Cover";
 import { DateSection } from "./DateSection";
-import { DressCode } from "./DressCode";
+import { EnvelopeIntro } from "./EnvelopeIntro";
 import { Greeting } from "./Greeting";
 import { LangSwitch } from "./LangSwitch";
 import { MusicPlayer } from "./MusicPlayer";
-import { PhotoBooth } from "./PhotoBooth";
 import { Program } from "./Program";
 import { Rsvp } from "./Rsvp";
 import { Venue } from "./Venue";
 import styles from "./Invitation.module.css";
 
-export function Invitation({ hasMusic }: { hasMusic: boolean }) {
-  const lang = useLang();
+type Props = {
+  hasMusic: boolean;
+  guest: string;
+  initialLang: Lang;
+};
+
+export function Invitation({ hasMusic, guest, initialLang }: Props) {
+  const lang = useLang(initialLang);
   const t = ui[lang];
 
   useEffect(() => {
@@ -26,18 +31,17 @@ export function Invitation({ hasMusic }: { hasMusic: boolean }) {
 
   return (
     <>
+      <EnvelopeIntro t={t} guest={guest} />
       <LangSwitch lang={lang} />
       {hasMusic && <MusicPlayer t={t} />}
       <main className={styles.shell}>
         <Cover t={t} />
-        <PhotoBooth t={t} />
-        <Greeting t={t} />
+        <Greeting t={t} guest={guest} />
         <DateSection t={t} />
         <Program t={t} lang={lang} />
         <Venue t={t} lang={lang} />
-        <DressCode t={t} lang={lang} />
-        <Rsvp t={t} lang={lang} />
-        <Closing t={t} />
+        <Rsvp t={t} lang={lang} guest={guest} />
+        <Closing t={t} showMusicCredit={hasMusic} />
       </main>
     </>
   );

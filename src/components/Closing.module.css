@@ -32,6 +32,21 @@
   color: rgba(251, 236, 238, 0.85);
 }
 
+.credit {
+  position: relative;
+  margin: 12cqi 0 0;
+  font-size: max(11px, 2.9cqi);
+  line-height: 1.5;
+  color: rgba(251, 236, 238, 0.45);
+}
+
+.credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(251, 236, 238, 0.25);
+  text-underline-offset: 2px;
+}
+
 .date {
   margin: 3cqi 0 0;
   font-family: var(--font-display), Georgia, serif;

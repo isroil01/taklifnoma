@@ -10,7 +10,7 @@ type Status = "idle" | "sending" | "done" | "error";
 
 const MAX_GUESTS = 10;
 
-export function Rsvp({ t, lang }: { t: Dict; lang: Lang }) {
+export function Rsvp({ t, lang, guest }: { t: Dict; lang: Lang; guest: string }) {
   const [attending, setAttending] = useState(true);
   const [guests, setGuests] = useState(1);
   const [status, setStatus] = useState<Status>("idle");
@@ -61,6 +61,7 @@ export function Rsvp({ t, lang }: { t: Dict; lang: Lang }) {
                 id="rsvp-name"
                 name="name"
                 className={styles.input}
+                defaultValue={guest}
                 placeholder={t.namePlaceholder}
                 autoComplete="name"
                 maxLength={80}

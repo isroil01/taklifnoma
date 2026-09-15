@@ -39,6 +39,7 @@ export function setLang(lang: Lang) {
   listeners.forEach((listener) => listener());
 }
 
-export function useLang(): Lang {
-  return useSyncExternalStore(subscribe, read, () => wedding.defaultLang);
+/** `serverLang` is what the server rendered (from `?lang=`), so hydration matches. */
+export function useLang(serverLang: Lang = wedding.defaultLang): Lang {
+  return useSyncExternalStore(subscribe, read, () => serverLang);
 }

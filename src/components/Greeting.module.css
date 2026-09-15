@@ -1,10 +1,15 @@
 .greeting {
-  padding-top: 6cqi;
+  /* Extra room for the lace fringe hanging from the cover. */
+  padding-top: 28cqi;
   background: linear-gradient(var(--paper), var(--cream));
 }
 
 .title {
   margin: 3cqi 0 6cqi;
+}
+
+.guestTitle {
+  font-size: 12cqi;
 }
 
 .italic {

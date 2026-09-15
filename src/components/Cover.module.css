@@ -28,9 +28,14 @@
   animation: drop 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
+/* Hold the polaroid drop until the envelope has been opened. */
+:global(html:not([data-opened])) .polaroid {
+  animation-play-state: paused;
+}
+
 .photo {
   position: relative;
-  aspect-ratio: 4 / 4.4;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 50% 50% 3px 3px / 30% 30% 3px 3px;
   background: #d8cfc0;
@@ -49,6 +54,7 @@
 
 .img {
   object-fit: cover;
+  object-position: 50% 60%;
 }
 
 .names {

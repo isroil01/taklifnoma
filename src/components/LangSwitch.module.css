@@ -1,6 +1,7 @@
 .switch {
   position: fixed;
-  z-index: 50;
+  /* Above the envelope intro, so guests can switch language before opening it. */
+  z-index: 90;
   top: calc(env(safe-area-inset-top) + 12px);
   /* Pinned to the right edge of the centered column on wide screens. */
   right: max(12px, calc((100vw - var(--shell)) / 2 + 12px));
